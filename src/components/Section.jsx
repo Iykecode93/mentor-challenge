@@ -22,7 +22,7 @@ const Section = () => {
               <li><img src={meet} alt="" className="art-li"/></li>
             </ul>
       </article>
-      <article>
+      <article className="article-img">
         <picture>
           <source media="(768px)" srcset={desktop} />
           <img src={mobile} alt="" />

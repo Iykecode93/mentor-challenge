@@ -10,70 +10,89 @@ import reminder from "../assets/images/icon-reminders.svg";
 import planning from "../assets/images/icon-planning.svg";
 import closeMenu from "../assets/images/icon-close-menu.svg";
 
-
 const Header = () => {
-    const [openFeatures, setOpenFeatures] = useState(false)
-    const [openCompany, setCompany] = useState(false)
+  const [openFeatures, setOpenFeatures] = useState(false);
+  const [openCompany, setCompany] = useState(false);
 
-    const handleOpenMenu = () => {
-        const navbar = document.querySelector(".navbar");
-        const menuButton = document.querySelector(".menu-button");
+  const handleOpenMenu = () => {
+    const navbar = document.querySelector(".navbar");
+    const menuButton = document.querySelector(".menu-button");
 
-        navbar.classList.toggle("open");
+    navbar.classList.toggle("open");
 
-        if (navbar.classList.contains("open")) {
-            menuButton.src = closeMenu;
-        } else {
-            menuButton.src = menuOpen;
-        }
+    if (navbar.classList.contains("open")) {
+      menuButton.src = closeMenu;
+    } else {
+      menuButton.src = menuOpen;
     }
+  };
 
   return (
     <header className="header">
-      <div className="navlink" >
+      <div className="navlink">
         <img src={logo} alt="" className="logomargin" />
 
         <nav className="navbar">
-          <div>
-            <button onClick={() => setOpenFeatures(!openFeatures)} className="arrow-icon">
-              Features {openFeatures ? <img src={chevronUp} alt="" className="arrow" /> : <img src={chevronDown} alt="" className="arrow" />}
+          <div className='navfeature'>
+            <button
+              onClick={() => setOpenFeatures(!openFeatures)}
+              className="arrow-icon"
+            >
+              Features{" "}
+              {openFeatures ? (
+                <img src={chevronUp} alt="" className="arrow" />
+              ) : (
+                <img src={chevronDown} alt="" className="arrow" />
+              )}
             </button>
 
-            {openFeatures && <ul className="navul">
-              <li className="navli">
-                <img src={todolist} alt="" className="img-li"/>
-                Todo List
-              </li>
-              <li className="navli">
-                <img src={calender} alt="" className="img-li"/>
-                Calendar
-              </li>
-              <li className="navli">
-                <img src={reminder} alt="" className="img-li"/>
-                Reminder
-              </li>
-              <li className="navli">
-                <img src={planning} alt=""  className="img-li"/>
-                Planning
-              </li>
-            </ul>}
+            {openFeatures && (
+              <ul className="navul">
+                <a href=""><li className="navli">
+                  <img src={todolist} alt="" className="img-li" />
+                  Todo List
+                </li></a>
+                <a href=""><li className="navli">
+                  <img src={calender} alt="" className="img-li" />
+                  Calendar
+                </li></a>
+                <a href=""><li className="navli">
+                  <img src={reminder} alt="" className="img-li" />
+                  Reminder
+                </li></a>
+                <a href=""><li className="navli">
+                  <img src={planning} alt="" className="img-li" />
+                  Planning
+                </li></a>
+              </ul>
+            )}
           </div>
-          <div>
-            <button onClick={() => setCompany(!openCompany)} className="arrow-icon">
-              Company {openCompany ? <img src={chevronUp} alt="" className="arrow" /> : <img src={chevronDown} alt="" className="arrow" />}
+          <div className="navfeature">
+            <button
+              onClick={() => setCompany(!openCompany)}
+              className="arrow-icon"
+            >
+              Company{" "}
+              {openCompany ? (
+                <img src={chevronUp} alt="" className="arrow" />
+              ) : (
+                <img src={chevronDown} alt="" className="arrow" />
+              )}
             </button>
 
-            {openCompany && <ul className="navul">
-              <li className="navli">Histroy</li>
-              <li className="navli">Our Team</li>
-              <li className="navli">Blog</li>
-            </ul>}
+            {openCompany && (
+              <ul className="navul">
+                <li className="navli">Histroy</li>
+                <li className="navli">Our Team</li>
+                <li className="navli">Blog</li>
+              </ul>
+            )}
           </div>
-          <div className="navcareer">
-            <button>Careers</button>
+          <div className="navfeature">
+            <a href="">Careers</a>
           </div>
           <div>
-            <button>About</button>
+            <a href="">About</a>
           </div>
         </nav>
       </div>

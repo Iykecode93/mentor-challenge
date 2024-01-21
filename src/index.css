@@ -158,6 +158,21 @@ body {
   width: 4rem;
 }
 
+@media (min-width: 300px) {
+  .navfeature {
+    margin-bottom: 15px;
+  }
+
+  .attribution {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
 @media (min-width: 768px) {
   .section {
     display: grid;
@@ -173,6 +188,7 @@ body {
   .article {
     text-align: left;
     margin-top: 0;
+    margin-left: -30px;
   }
 
   .art-ul {
@@ -182,6 +198,11 @@ body {
   .art-li {
     width: 6rem;
   }
+
+  .navfeature {
+    margin-bottom: 15px;
+  }
+  
 }
 
 @media (min-width: 1024px) {
@@ -195,6 +216,7 @@ body {
     width: auto;
     padding: 0;
     z-index: auto;
+    margin-left: 25px;
   }
 
   .navbar.open {
